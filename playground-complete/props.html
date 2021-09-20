@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
 <body>
@@ -12,9 +12,11 @@
     <app-header v-bind:propsdata="message"></app-header>
     <app-content v-bind:propsdata="num"></app-content>
   </div>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
+
     var appHeader = {
       template: '<h1>{{ propsdata }}</h1>',
       props: ['propsdata']
@@ -24,6 +26,10 @@
       props: ['propsdata']
     }
 
+
+    var message = 'anything you want!!!';
+    var num = 10;
+
     new Vue({
       el: '#app',
       components: {
@@ -31,10 +37,11 @@
         'app-content': appContent
       },
       data: {
-        message: 'hi',
-        num: 10
+        message: message,
+        num: num  
       }
     })
+
   </script>
 </body>
 </html>
